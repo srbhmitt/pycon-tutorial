@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>Home Page</title>
+  </head>
+  <body>
+
+  	<form action="/submissionsuccess" method="POST" enctype="multipart/form-data">
+  		<button type="button">
+  			<input type="file" name="file1">
+  			{{button_title['title1']}}
+  		</button>
+  		<br>
+  		<br>
+  		<br>
+  		<button type="submit" name="submit" value="Convert to text"> {{button_title['title2']}} </button>
+  		<br>
+  		<br>
+  		<button type="submit" name="submit" value="Get orientation"> {{button_title['title3']}} </button>
+   		<br>
+  		<br>
+  		<button type="submit" name="submit" value="Get all coordinates"> {{button_title['title4']}} </button>	
+    	<br>
+  		<br>
+  		<input type="text" name="coortext"><button type="submit" name="submit" value="Get its coordinates"> {{button_title['title5']}} </button>
+  		<br>
+  		<br>
+  		<input type="text" name="croptext"><button type="submit" name="submit" value="Crop out this text"> {{button_title['title6']}} </button>	
+    	<br>
+  		<br>
+  		<button type="submit" name="submit" value="Detect checkmark"> {{button_title['title7']}} </button>		
+  	</form>
+  </body>
+</html>
