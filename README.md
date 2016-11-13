@@ -1,5 +1,9 @@
 # pycon-tutorial
 
+- [Installations and setup](#setup)
+- [Training Tesseract for new fonts](#training)
+
+## <a name="setup"></a>Installations and setup
 This is the repo which contains the code for the pycon-tutorial Capital One is sponsoring in 2016. This tutorial teaches
 how to create a simple web application to do OCR.
 
@@ -16,3 +20,36 @@ Run following command in terminal:
 - Run “tesseract - v” to ensure that Tesseract installed successfully
 
 Then just run python run.py from your terminal.
+
+
+## <a name="training"></a>Training a new font with Tesseract
+Tesseract allows [training of new fonts and even new languages](https://github.com/tesseract-ocr/tesseract/wiki/Training-Tesseract), which requires installing Tesseract with this command:
+```
+brew install --with-training-tools tesseract
+```
+
+You'll need to `brew uninstall tesseract` first if you already have it installed.
+
+Try to run Tesseract on the current image example in the training folder:
+
+```
+tesseract eng.icr.exp0.tiff before_training
+```
+
+The resulting `before_training.txt` file gives us an idea of what the results would be on a new untrained font.  Now we can use this image to train and see what the results would be after training. Typically, this is a [manual process](http://pp19dd.com/tesseract-ocr-chopper/) involving a human to manually go through each character and dictating whether the guessed output is correct or not, and provide the correct character if it's incorrect. In the interest of time, we've done this for you already, and the results are in the .box file.
+
+To train on the new font, you'd need both the original .tiff and the .box file, with their names **exactly** the same. In the training folder, you can use the following command that trains on this new font:
+
+```
+bash tesseract.sh eng.icr.exp0 icr
+```
+
+Now to see the new results after training, use the following command:
+
+```
+tesseract eng.icr.exp0.tiff after_training -l icr
+```
+
+Check `after_training.txt` and compare it to `before_training.txt` to see the difference!
+
+Usually, you would want to train with more text, we've minimized the text here for the sake of time.
