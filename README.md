@@ -21,6 +21,22 @@ Run following command in terminal:
 
 Then just run python run.py from your terminal.
 
+# For Windows:
+
+Download and install this: https://github.com/UB-Mannheim/tesseract/wiki
+
+Open the views tab and create a new variable to point to the install. For example:
+
+pt2='C:\\Users\\GMZ094\\AppData\\Local\\Tesseract-OCR\\tesseract'
+
+then update the subprocess calls in views.py. For example from:
+
+text1=subprocess.check_output(['tesseract',destination1,"stdout","-l","eng","-psm","4"])
+
+to:
+
+text1=subprocess.check_output([pt2,destination1,"stdout","-l","eng","-psm","4"])
+
 
 ## <a name="training"></a>Training a new font with Tesseract
 Tesseract allows [training of new fonts and even new languages](https://github.com/tesseract-ocr/tesseract/wiki/Training-Tesseract), which requires installing Tesseract with this command:
