@@ -64,9 +64,7 @@ def upload():
             address = translated_file.read().replace('\n', '').replace('\t', '').strip()
             translated_file.close()
             addresses.append(address)
-        os.chdir(os.path.join(app.root_path, '../'))
-        API_key = open('api_key.txt', 'r')
-        print API_key
+
         address1 = addresses[0]
         address2 = addresses[1]
         #session['address1'] = address1
@@ -81,8 +79,10 @@ def upload():
 def directions():
     address1 = request.args['address1']
     address2 = request.args['address2']
-    API_key = 'AIzaSyB_yTzvSbg6_N4yCYXi2gDsag3QIqTcQxw'
-    return render_template('directions.html',address1=address1, address2=address2, API_key=API_key)
+    os.chdir(os.path.join(app.root_path, '../'))
+    api_file = open('api_key.txt', 'r')
+    api_key = api_file.read().strip()
+    return render_template('directions.html',address1=address1, address2=address2, API_key=api_key)
 
 @app.route('/upload_error/')
 def upload_error():
