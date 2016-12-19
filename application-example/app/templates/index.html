@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %} Directions {% endblock %}
+
+
+
+{% block page_header %}
+
+{% endblock %}
+
+{% block content %}
+
+<div>
+  <form action="upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="file"><br /><br />
+    <input type="file" name="file"><br /><br /></input>
+    <input type="submit" value="Upload and 'translate'" />
+
+  </form>
+
+</div>
+
+
+{% endblock %}
