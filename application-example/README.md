@@ -2,7 +2,8 @@
 
 This is an example of a complete application that you can make with OCR, Flask and Google Maps API. This application allows the user to upload two points of interest through images, and outputs the current driving directions between the two points:
 
-https://github.com/srbhmitt/pycon-tutorial/blob/application-example/application-example/app/static/img/output.png
+![image of output]
+(https://github.com/srbhmitt/pycon-tutorial/blob/application-example/application-example/app/static/img/output.png)
 
 
 ### Set-up instructions:
