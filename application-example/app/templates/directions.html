@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+
+{% block page_header %}
+
+{% endblock %}
+
+{% block content %}
+
+<div>
+  <iframe class="map-top"
+      width="598"
+      height="450"
+      src="https://www.google.com/maps/embed/v1/directions?key={{API_key}}
+      &origin={{address1}}&destination={{address2}}" allowfullscreen>
+  </iframe>
+
+
+</div>
+
+
+{% endblock %}
