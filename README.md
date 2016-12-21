@@ -2,7 +2,7 @@
 
 - [Installations and setup](#setup)
 - [Training Tesseract for new fonts](#training)
-
+- [Web application example](#example)
 ## <a name="setup"></a>Installations and setup
 This is the repo which contains the code for the pycon-tutorial Capital One is sponsoring in 2016. This tutorial teaches
 how to create a simple web application to do OCR.
@@ -69,3 +69,6 @@ tesseract eng.icr.exp0.tiff after_training -l icr
 Check `after_training.txt` and compare it to `before_training.txt` to see the difference!
 
 Usually, you would want to train with more text, we've minimized the text here for the sake of time.
+
+## <a name="example"></a>Web application example
+You can make very powerful web applications with Flask and OCR, especially when combined with other tools. Check out a [web application](https://github.com/srbhmitt/pycon-tutorial/tree/application-example/application-example) that was made with Flask OCR and Google API. 
